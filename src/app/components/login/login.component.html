@@ -1,0 +1,39 @@
+<script>
+    window.watsonAssistantChatOptions = {
+        integrationID: "03b9a372-b665-45dd-8a01-ee70268e0ef7", // The ID of this integration.
+        region: "au-syd", // The region your integration is hosted in.
+        serviceInstanceID: "435e9ab8-401c-4746-9897-34a58da88d32", // The ID of your service instance.
+        onLoad: function(instance) { instance.render(); }
+      };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+      document.head.appendChild(t);
+    });
+  </script>
+<section class="login-block">
+    <div class="container">
+        <div class="row ">
+            <div class="col login-sec">
+                <h2 class="text-center">Sistema Portal</h2>
+                <form class="login-form">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="text-uppercase">Usuario</label>
+                        <input type="text" autocomplete="off" class="form-control" name="email_usu" [(ngModel)]="usuario.email_usu" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1" class="text-uppercase">Contraseña</label>
+                        <input type="password" autocomplete="off" class="form-control" name="pass_usu" [(ngModel)]="usuario.pass_usu" placeholder="">
+                    </div>
+
+                    <div class="form-check">
+                        <span style="width:48%; text-align:left;  display: inline-block;"><a class="small-text" href="#"></a></span>
+                        <!-- ¿Nuevo Usuario? -->
+                        <button type="submit" (click)="login()" class="btn btn-login float-right">Ingresar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
